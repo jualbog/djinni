@@ -204,6 +204,9 @@ class CppGenerator(spec: Spec) extends Generator(spec) {
           w.wl(s"friend bool operator>=(const $actualSelf& lhs, const $actualSelf& rhs);")
         }
 
+        w.wl
+        w.wl(s"$actualSelf() = default;")
+
         // Constructor.
         if(r.fields.nonEmpty) {
           w.wl
